@@ -24,6 +24,17 @@ This matrix tags each major recommendation with provenance.
 | MCP tool naming in hooks (mcp__server__tool) | Official Product Docs | code.claude.com hooks reference |
 | Install and section injection pattern | Reference Implementation | Installer module and markdown section-merge tests |
 
+## Claude Desktop and MCPB
+
+| Topic | Source Type | Primary Evidence |
+| --- | --- | --- |
+| Desktop extension install flows (directory and local `.mcpb`) | Official Product Docs | Claude Help Center: local MCP servers on Claude Desktop |
+| Team and Enterprise extension controls and policy caveats | Official Product Docs | Claude Help Center: desktop extension admin and enterprise controls |
+| Custom skill packaging basics and trigger metadata constraints | Official Product Docs | Claude Help Center: how to create custom skills |
+| MCPB package model and DXT to MCPB rename guidance | Official Product Docs | modelcontextprotocol/mcpb README |
+| Manifest required fields, server types, compatibility, and user_config schema | Official Spec | modelcontextprotocol/mcpb MANIFEST.md |
+| MCPB CLI lifecycle (`init`, `validate`, `pack`, `sign`, `verify`, `info`, `unsign`) | Official Product Docs | modelcontextprotocol/mcpb CLI.md |
+
 ## Codex
 
 | Topic | Source Type | Primary Evidence |
@@ -112,6 +123,8 @@ This matrix tags each major recommendation with provenance.
 - https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
 - https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
 - https://platform.claude.com/docs/en/build-with-claude/skills-guide
+- https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop
+- https://support.claude.com/en/articles/12512198-how-to-create-custom-skills
 - https://agentskills.io/skill-creation/quickstart
 - https://agentskills.io/skill-creation/best-practices
 - https://agentskills.io/skill-creation/optimizing-descriptions
@@ -120,6 +133,9 @@ This matrix tags each major recommendation with provenance.
 - https://agentskills.io/specification
 - https://developers.openai.com/codex/skills
 - https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md
+- https://github.com/modelcontextprotocol/mcpb
+- https://github.com/modelcontextprotocol/mcpb/blob/main/MANIFEST.md
+- https://github.com/modelcontextprotocol/mcpb/blob/main/CLI.md
 - https://docs.openclaw.ai/tools/skills
 - https://docs.openclaw.ai/tools/creating-skills
 - https://docs.openclaw.ai/tools/skills-config

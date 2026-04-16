@@ -91,6 +91,24 @@ claude mcp add your_memory_server -- python -m your_memory_server.mcp_server
 gemini mcp add your_memory_server /absolute/path/to/.venv/bin/python3 -m your_memory_server.mcp_server --scope user
 ```
 
+## MCPB extension packaging quickstart
+
+```bash
+# Install MCPB CLI
+npm install -g @anthropic-ai/mcpb
+
+# Initialize/author manifest
+mcpb init
+
+# Validate and pack
+mcpb validate .
+mcpb pack . my-extension.mcpb
+
+# Optional signing and verification
+mcpb sign my-extension.mcpb --self-signed
+mcpb verify my-extension.mcpb
+```
+
 ## VS Code mcp.json example
 
 ```json

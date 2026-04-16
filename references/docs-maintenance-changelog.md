@@ -31,6 +31,23 @@ This page defines how to maintain this manual and tracks notable documentation u
 
 ## Changelog
 
+## 2026-04-17 (Claude Desktop and MCPB coverage)
+
+Summary:
+- Added a new Claude Desktop framework guide focused on desktop extension install flows, custom `.mcpb` installation, enterprise controls, troubleshooting, and validation checks.
+- Added a new deep technical topic for MCP Bundles (MCPB) covering manifest design, server/runtime models, packaging lifecycle, signing, and governance.
+- Updated manual navigation and evidence/compatibility references to include Claude Desktop and MCPB source provenance.
+
+Impacted pages:
+- docs/agent-integrations/frameworks/claude-desktop.md
+- docs/agent-integrations/topics/mcpb-bundles.md
+- docs/agent-integrations/README.md
+- docs/agent-integrations/references/source-matrix.md
+- docs/agent-integrations/references/compatibility-matrix.md
+- docs/agent-integrations/references/new-cli-checklist.md
+- docs/agent-integrations/references/snippets-cookbook.md
+- docs/agent-integrations/references/docs-maintenance-changelog.md
+
 ## 2026-04-17 (Anthropic best-practices hardening)
 
 Summary:

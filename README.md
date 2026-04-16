@@ -30,6 +30,7 @@ This manual documents best practices for integrating a CLI tool with modern codi
 ### Framework guides
 
 - [Claude Code](frameworks/claude-code.md)
+- [Claude Desktop](frameworks/claude-desktop.md)
 - [Codex](frameworks/codex.md)
 - [Gemini CLI and API](frameworks/gemini.md)
 - [Hermes Agent](frameworks/hermes-agent.md)
@@ -44,6 +45,7 @@ This manual documents best practices for integrating a CLI tool with modern codi
 
 - [Integration Architecture Patterns](topics/architecture-patterns.md)
 - [MCP Server Design](topics/mcp-server-design.md)
+- [MCP Bundles (MCPB)](topics/mcpb-bundles.md)
 - [Hooks and Lifecycle Control](topics/hooks-and-lifecycle.md)
 - [Instruction Layers and Skills](topics/instructions-and-skills.md)
 - [Skills Marketplace Integration](topics/skills-marketplace-integration.md)
@@ -64,6 +66,8 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - [Anthropic Agent Skills Best Practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
 - [Anthropic Agent Skills Overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [Anthropic Skills Guide (API)](https://platform.claude.com/docs/en/build-with-claude/skills-guide)
+- [Claude Desktop Local MCP Servers](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
+- [Claude Custom Skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
 - [Agent Skills Quickstart](https://agentskills.io/skill-creation/quickstart)
 - [Agent Skills Best Practices](https://agentskills.io/skill-creation/best-practices)
 - [Optimizing Skill Descriptions](https://agentskills.io/skill-creation/optimizing-descriptions)
@@ -72,6 +76,9 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - [Agent Skills Specification](https://agentskills.io/specification)
 - [OpenAI Codex Skills](https://developers.openai.com/codex/skills)
 - [Anthropic skill-creator SKILL.md](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md)
+- [MCPB Repository](https://github.com/modelcontextprotocol/mcpb)
+- [MCPB Manifest Spec](https://github.com/modelcontextprotocol/mcpb/blob/main/MANIFEST.md)
+- [MCPB CLI Docs](https://github.com/modelcontextprotocol/mcpb/blob/main/CLI.md)
 - [OpenClaw Skills](https://docs.openclaw.ai/tools/skills)
 - [OpenClaw Creating Skills](https://docs.openclaw.ai/tools/creating-skills)
 - [OpenClaw Skills Config](https://docs.openclaw.ai/tools/skills-config)

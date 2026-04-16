@@ -34,6 +34,8 @@ Use this checklist to bootstrap agent integrations in a new CLI project.
 - Implement initialize, tools/list, and tools/call correctly.
 - Return deterministic error payloads.
 - Keep logs on stderr only for stdio transport.
+- If shipping local desktop extensions, add MCPB packaging gates (`mcpb validate` and `mcpb pack`) before release.
+- If shipping signed bundles, verify signature status in CI (`mcpb verify`) and publish expected trust model.
 
 ## Stage 5: Skills and reusable behavior
 
