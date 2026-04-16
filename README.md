@@ -32,6 +32,7 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - [Claude Code](frameworks/claude-code.md)
 - [Codex](frameworks/codex.md)
 - [Gemini CLI and API](frameworks/gemini.md)
+- [Hermes Agent](frameworks/hermes-agent.md)
 - [OpenCode](frameworks/opencode.md)
 - [OpenClaw](frameworks/openclaw.md)
 - [Cursor](frameworks/cursor.md)
@@ -60,6 +61,9 @@ This manual documents best practices for integrating a CLI tool with modern codi
 
 ### External references used
 
+- [Anthropic Agent Skills Best Practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
+- [Anthropic Agent Skills Overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+- [Anthropic Skills Guide (API)](https://platform.claude.com/docs/en/build-with-claude/skills-guide)
 - [Agent Skills Quickstart](https://agentskills.io/skill-creation/quickstart)
 - [Agent Skills Best Practices](https://agentskills.io/skill-creation/best-practices)
 - [Optimizing Skill Descriptions](https://agentskills.io/skill-creation/optimizing-descriptions)
@@ -73,6 +77,13 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - [OpenClaw Skills Config](https://docs.openclaw.ai/tools/skills-config)
 - [OpenClaw Slash Commands](https://docs.openclaw.ai/tools/slash-commands)
 - [OpenClaw ClawHub](https://docs.openclaw.ai/tools/clawhub)
+- [Hermes Adding Tools](https://hermes-agent.nousresearch.com/docs/developer-guide/adding-tools)
+- [Hermes Adding Providers](https://hermes-agent.nousresearch.com/docs/developer-guide/adding-providers)
+- [Hermes Adding Platform Adapters](https://hermes-agent.nousresearch.com/docs/developer-guide/adding-platform-adapters)
+- [Hermes Memory Provider Plugins](https://hermes-agent.nousresearch.com/docs/developer-guide/memory-provider-plugin)
+- [Hermes Context Engine Plugins](https://hermes-agent.nousresearch.com/docs/developer-guide/context-engine-plugin)
+- [Hermes Creating Skills](https://hermes-agent.nousresearch.com/docs/developer-guide/creating-skills)
+- [Hermes MCP Feature Guide](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp)
 
 Key skill docs to start with:
 

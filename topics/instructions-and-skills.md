@@ -80,6 +80,16 @@ Use the Agent Skills specification as the baseline contract for portable skills.
 	- examples,
 	- edge-case handling.
 
+Anthropic-specific hardening guidance for Claude-native skills:
+
+- Prefer gerund-style names that communicate action clearly (for example, `processing-pdfs`, `testing-code`).
+- Keep names specific; avoid vague names such as `helper`, `utils`, or `tools`.
+- Write `description` in third person and include both what the skill does and when to use it.
+- Keep description concise and concrete, with user-intent trigger language instead of implementation detail.
+- Avoid reserved words in skill names (`anthropic`, `claude`) and keep frontmatter parser-safe.
+
+Reference: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
+
 Recommended directory shape:
 
 ```text
@@ -118,8 +128,10 @@ Design skills so context load stays efficient:
 Guidance:
 
 - Keep `SKILL.md` focused on the default path.
+- Keep `SKILL.md` body compact; for Claude-native skills, target under 500 lines.
 - Move long or conditional detail to `references/`.
 - Include explicit pointers: "Read `references/api-errors.md` when status is non-200."
+- Keep references shallow from `SKILL.md` (one-level deep) and avoid chained references.
 - Avoid deep reference chains that force unnecessary context loading.
 
 ## Description optimization patterns
@@ -129,6 +141,7 @@ Description quality is the primary trigger-control surface in most hosts.
 Write descriptions that:
 
 - use imperative phrasing ("Use this skill when...");
+- for Anthropic skill frontmatter, use third-person phrasing for reliable discovery;
 - capture user intent, not implementation details;
 - define scope boundaries (what is in and out);
 - include near-synonyms and indirect user phrasing;
@@ -141,6 +154,13 @@ Practical loop:
 3. Run each prompt multiple times to reduce nondeterminism effects.
 4. Improve description by category, not by keyword overfitting.
 5. Keep a fixed validation split and select the best iteration by validation score.
+
+## Common anti-patterns to avoid
+
+- Time-sensitive wording that goes stale quickly (for example, date-gated rules in the default path).
+- Windows-style backslash paths in docs (`path\\to\\file`) instead of portable forward slashes (`path/to/file`).
+- Deep nested references where critical details are only reachable through multiple hops.
+- Overly broad option lists without a clear default path.
 
 ## Scripts in skills
 

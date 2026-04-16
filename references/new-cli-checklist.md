@@ -47,6 +47,8 @@ Use this checklist to bootstrap agent integrations in a new CLI project.
 - Require non-interactive script behavior (`--help`, explicit flags, deterministic exit codes).
 - Require with-skill versus baseline output comparison before default promotion.
 - Record source revision, eval summary, and rollback steps for each approved skill.
+- For Claude-native skills, align with Anthropic best practices: specific description trigger contract, concise `SKILL.md` core path, and anti-pattern checks.
+- For Claude-native skills, validate behavior on each intended Anthropic model tier before default promotion.
 - For OpenClaw integrations, verify skill scope and precedence (`<workspace>/skills`, `.agents/skills`, user/global paths) before debugging trigger failures.
 - For OpenClaw integrations, document session refresh behavior after skill/config changes (new session or gateway restart when needed).
 

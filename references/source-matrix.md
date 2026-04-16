@@ -79,10 +79,25 @@ This matrix tags each major recommendation with provenance.
 | Skill install workflow and ecosystem usage | Official Product Docs | context7.com and ai.google.dev coding-agents |
 | Skill as portability layer across agent hosts | Inferred Practice | Combined platform behavior and skill usage models |
 
+## Hermes extension and MCP model
+
+| Topic | Source Type | Primary Evidence |
+| --- | --- | --- |
+| Tool authoring contract and discovery model | Official Product Docs | Hermes developer guide: adding tools |
+| Provider layering and api-mode branching model | Official Product Docs | Hermes developer guide: adding providers |
+| Platform adapter cross-surface checklist and parity audit pattern | Official Product Docs | Hermes developer guide: adding platform adapters |
+| Memory provider plugin lifecycle and single-provider rule | Official Product Docs | Hermes developer guide: memory provider plugins |
+| Context engine plugin contract and single-engine activation model | Official Product Docs | Hermes developer guide: context engine plugins |
+| Skill metadata contract, secure setup fields, and distribution guidance | Official Product Docs | Hermes developer guide: creating skills |
+| MCP client/server dual-mode behavior, filtering, and sampling controls | Official Product Docs | Hermes user guide: MCP feature page |
+
 ## Skill creation and quality workflow
 
 | Topic | Source Type | Primary Evidence |
 | --- | --- | --- |
+| Claude-native skill authoring best practices (conciseness, naming, descriptions, anti-patterns) | Official Product Docs | [Anthropic Agent Skills Best Practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) |
+| Claude-native skill structure and progressive disclosure model | Official Product Docs | [Anthropic Agent Skills Overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) |
+| API-side skill usage and deployment guidance | Official Product Docs | [Anthropic Skills Guide (API)](https://platform.claude.com/docs/en/build-with-claude/skills-guide) |
 | Skill quickstart and first-skill workflow | Official Product Docs | [Agent Skills Quickstart](https://agentskills.io/skill-creation/quickstart) |
 | Skill authoring best practices (scope, gotchas, templates, validation loops) | Official Product Docs | [Agent Skills Best Practices](https://agentskills.io/skill-creation/best-practices) |
 | Description-trigger optimization methodology | Official Product Docs | [Optimizing Skill Descriptions](https://agentskills.io/skill-creation/optimizing-descriptions) |
@@ -94,6 +109,9 @@ This matrix tags each major recommendation with provenance.
 
 ## Direct reference URLs used in this update
 
+- https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
+- https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
+- https://platform.claude.com/docs/en/build-with-claude/skills-guide
 - https://agentskills.io/skill-creation/quickstart
 - https://agentskills.io/skill-creation/best-practices
 - https://agentskills.io/skill-creation/optimizing-descriptions
@@ -107,6 +125,13 @@ This matrix tags each major recommendation with provenance.
 - https://docs.openclaw.ai/tools/skills-config
 - https://docs.openclaw.ai/tools/slash-commands
 - https://docs.openclaw.ai/tools/clawhub
+- https://hermes-agent.nousresearch.com/docs/developer-guide/adding-tools
+- https://hermes-agent.nousresearch.com/docs/developer-guide/adding-providers
+- https://hermes-agent.nousresearch.com/docs/developer-guide/adding-platform-adapters
+- https://hermes-agent.nousresearch.com/docs/developer-guide/memory-provider-plugin
+- https://hermes-agent.nousresearch.com/docs/developer-guide/context-engine-plugin
+- https://hermes-agent.nousresearch.com/docs/developer-guide/creating-skills
+- https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp
 
 ## Skills marketplace discovery
 

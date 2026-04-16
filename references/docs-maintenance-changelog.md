@@ -31,6 +31,35 @@ This page defines how to maintain this manual and tracks notable documentation u
 
 ## Changelog
 
+## 2026-04-17 (Anthropic best-practices hardening)
+
+Summary:
+- Added Anthropic official Agent Skills references to the manual and evidence matrix.
+- Hardened skill authoring guidance with Claude-native constraints for naming, descriptions, progressive disclosure, and anti-pattern avoidance.
+- Expanded evaluation guidance and checklist gates with model-coverage expectations for Claude-native skill rollouts.
+
+Impacted pages:
+- docs/agent-integrations/README.md
+- docs/agent-integrations/topics/instructions-and-skills.md
+- docs/agent-integrations/topics/observability-and-testing.md
+- docs/agent-integrations/references/source-matrix.md
+- docs/agent-integrations/references/new-cli-checklist.md
+- docs/agent-integrations/references/docs-maintenance-changelog.md
+
+## 2026-04-17 (Hermes integration expansion)
+
+Summary:
+- Added and expanded the Hermes Agent framework guide with consolidated coverage for tools, providers, platform adapters, memory provider plugins, context engine plugins, skills, and MCP.
+- Kept deep technical topics framework-agnostic by removing Hermes-only top-level topic pages and moving that content into the Hermes framework page.
+- Added dedicated MCP coverage for both Hermes-as-client and Hermes-as-server usage patterns.
+- Updated the source matrix and external references to include Hermes official documentation provenance.
+
+Impacted pages:
+- docs/agent-integrations/frameworks/hermes-agent.md
+- docs/agent-integrations/README.md
+- docs/agent-integrations/references/source-matrix.md
+- docs/agent-integrations/references/docs-maintenance-changelog.md
+
 ## 2026-04-17
 
 Summary:

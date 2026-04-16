@@ -47,6 +47,7 @@ Use a repeatable loop to validate both triggering behavior and output quality.
 - Build realistic prompt sets with:
 	- should-trigger queries,
 	- should-not-trigger near-misses.
+- Run prompts across the target model set (for Anthropic: Haiku, Sonnet, and Opus when supported).
 - Run each prompt multiple times to account for model nondeterminism.
 - Track trigger rates rather than single-pass outcomes.
 
@@ -70,6 +71,15 @@ Use a repeatable loop to validate both triggering behavior and output quality.
 - Review outputs for subjective quality dimensions.
 - Capture actionable feedback per test case.
 - Feed failures and feedback into the next skill revision.
+
+## Model-coverage gate for Claude-native skills
+
+When promoting Claude-native skills, evaluate behavior on each model tier you plan to support.
+
+- Haiku: verify the skill provides enough explicit guidance for reliable execution.
+- Sonnet: verify balanced behavior and efficient instruction following.
+- Opus: verify the skill avoids over-constraining and unnecessary verbosity.
+- Track per-model pass-rate deltas and investigate large variance before promotion.
 
 ## Recommended artifacts
 
@@ -120,6 +130,7 @@ Installation and section-merge integration tests are strong examples of integrat
 - Trigger eval sets include near-miss negatives, not only easy negatives.
 - Output eval compares with an explicit baseline and tracks deltas.
 - Human review feedback is captured and tied to a revision decision.
+- Claude-native skills are tested across intended Anthropic model tiers before default rollout.
 
 ## Platform callouts
 
