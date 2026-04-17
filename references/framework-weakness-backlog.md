@@ -28,6 +28,11 @@ This backlog tracks documentation gaps against the setup-parity rubric:
 
 ## Required follow-up edits
 
+Cross-link rule:
+
+- Every backlog item should point to a current workaround section in a framework guide or topic reference.
+- If no workaround exists yet, mark status as `Blocked: no documented workaround`.
+
 ### 1. Cursor
 
 Target: `frameworks/cursor.md`
@@ -43,6 +48,11 @@ Sources:
 - https://cursor.com/docs/skills
 - https://cursor.com/docs/hooks
 - https://cursor.com/docs/mcp
+
+Workaround references:
+
+- `frameworks/cursor.md`
+- `topics/instructions-and-skills.md`
 
 ### 2. OpenCode
 
@@ -60,6 +70,11 @@ Sources:
 - https://opencode.ai/docs/mcp-servers/
 - https://opencode.ai/docs/custom-tools/
 
+Workaround references:
+
+- `frameworks/opencode.md`
+- `references/install-idempotency.md`
+
 ### 3. VS Code
 
 Target: `frameworks/vscode.md`
@@ -76,6 +91,11 @@ Sources:
 - https://code.visualstudio.com/docs/copilot/customization/mcp-servers
 - https://code.visualstudio.com/docs/copilot/customization/hooks
 - https://code.visualstudio.com/docs/copilot/customization/agent-plugins
+
+Workaround references:
+
+- `frameworks/vscode.md`
+- `references/transport-and-auth-matrix.md`
 
 ### 4. Trae
 
@@ -95,6 +115,11 @@ Sources:
 - https://docs.trae.ai/ide/mcp-server-install-links?_lang=en
 - https://docs.trae.ai/ide/use-mcp-servers-in-agents?_lang=en
 
+Workaround references:
+
+- `frameworks/trae.md`
+- `topics/instructions-and-skills.md`
+
 ### 5. Factory Droid
 
 Target: `frameworks/factory-droid.md`
@@ -110,6 +135,11 @@ Sources:
 - https://docs.factory.ai/cli/configuration/skills
 - https://docs.factory.ai/cli/configuration/mcp
 - https://docs.factory.ai/cli/configuration/hooks-guide
+
+Workaround references:
+
+- `frameworks/factory-droid.md`
+- `references/install-idempotency.md`
 
 ### 6. Hermes Agent
 
@@ -128,6 +158,11 @@ Sources:
 - https://hermes-agent.nousresearch.com/docs/guides/use-mcp-with-hermes
 - https://hermes-agent.nousresearch.com/docs/guides/work-with-skills
 - https://hermes-agent.nousresearch.com/docs/guides/build-a-hermes-plugin
+
+Workaround references:
+
+- `frameworks/hermes-agent.md`
+- `references/transport-and-auth-matrix.md`
 
 ## Done in current implementation pass
 

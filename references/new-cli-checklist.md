@@ -43,8 +43,11 @@ Use this checklist to bootstrap agent integrations in a new CLI project.
 ## Stage 5: Skills and reusable behavior
 
 - Decide whether to ship local skills, remote skills, or both.
-- Produce at least one Agent Skills-compatible package at repository root using `<toolname>-skill/` naming.
-- Ensure the canonical file path is `<repo-root>/<toolname>-skill/SKILL.md`.
+- Produce at least one Agent Skills-compatible installable package at repository root using deterministic naming.
+- For user-installable portable bundles, prefer `<toolname>-skill/`.
+- For repository-internal CLI workflow bundles, prefer `<toolname>-cli-skill/`.
+- Ensure the canonical file path is `<repo-root>/<package-name>/SKILL.md`.
+- Do not use internal validation metadata identifiers as installable package names.
 - Add install command for skill templates where platform supports it.
 - Define marketplace intake policy (allowed sources, review criteria, and rejection rules).
 - Provide verification command users can run after install.
@@ -59,6 +62,15 @@ Use this checklist to bootstrap agent integrations in a new CLI project.
 - For Claude-native skills, validate behavior on each intended Anthropic model tier before default promotion.
 - For OpenClaw integrations, verify skill scope and precedence (`<workspace>/skills`, `.agents/skills`, user/global paths) before debugging trigger failures.
 - For OpenClaw integrations, document session refresh behavior after skill/config changes (new session or gateway restart when needed).
+
+Recommended installable package shape:
+
+```text
+<package-name>/
+├── SKILL.md
+├── references/
+└── assets/
+```
 
 ## Stage 6: Security and approvals
 

@@ -12,6 +12,21 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - Platform integrators maintaining hooks, instruction files, and skills across tools.
 - Security and infra reviewers validating trust boundaries around tool execution.
 
+## Quick start selector
+
+Choose your starting guide by host and setup goal:
+
+| Goal | Start here |
+| --- | --- |
+| Claude Code project integration with hooks and MCP | `frameworks/claude-code.md` |
+| Claude Desktop local MCP setup | `frameworks/claude-desktop.md` |
+| Codex + skill-oriented workflow | `frameworks/codex.md` |
+| Gemini CLI/API integration | `frameworks/gemini.md` |
+| VS Code MCP host setup | `frameworks/vscode.md` |
+| Cross-host architecture first (before framework specifics) | `topics/architecture-patterns.md` |
+
+If unsure, run this order first: `references/new-cli-checklist.md` -> `topics/instructions-and-skills.md` -> one framework guide.
+
 ## What this manual covers
 
 - Platform-specific setup and installation flows.
@@ -24,6 +39,15 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - Security and approvals strategy.
 - Observability and integration testing patterns.
 - Copy-paste snippets and project bootstrap checklist.
+
+## Skill artifact taxonomy
+
+Keep these concepts separate during implementation:
+
+- Installable skill package: end-user/agent-facing bundle (for example `<tool>-skill/` with `SKILL.md`).
+- Internal contract metadata: validation/readiness descriptors used by sync checks.
+
+Do not use internal metadata identifiers as installable skill package names.
 
 ## Manual map
 
@@ -63,6 +87,8 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - [Required Skills Matrix](references/required-skills-matrix.md)
 - [Snippets Cookbook](references/snippets-cookbook.md)
 - [Compatibility Matrix](references/compatibility-matrix.md)
+- [Install Idempotency Guide](references/install-idempotency.md)
+- [Transport and Auth Matrix](references/transport-and-auth-matrix.md)
 - [Framework Weakness Backlog](references/framework-weakness-backlog.md)
 - [Docs Maintenance and Changelog](references/docs-maintenance-changelog.md)
 

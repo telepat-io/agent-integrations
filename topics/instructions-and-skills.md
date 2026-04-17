@@ -19,6 +19,15 @@ Create a portable instruction and skill model that works across frameworks with 
 
 Prefer additive layering with explicit precedence rules.
 
+Practical precedence rule:
+
+1. Host/system defaults.
+2. User/global instruction files.
+3. Repository root instructions.
+4. Subdirectory overrides (most specific).
+
+If two layers conflict, prefer the most specific scope and keep a note in docs about the override intent.
+
 ## Content contract for instruction sections
 
 Each section should specify:
@@ -35,6 +44,13 @@ Skills provide reusable behavior bundles and are useful for:
 - task orchestration templates,
 - domain-specific prompts,
 - tool invocation conventions.
+
+Skill artifact taxonomy:
+
+- Installable skill package: user-facing bundle with `SKILL.md` and optional references/assets.
+- Internal contract metadata: validation/readiness descriptors used by sync checks.
+
+Keep names distinct so users do not confuse internal IDs with installable package paths.
 
 For Gemini workflows, skills can be combined with docs MCP for freshness.
 

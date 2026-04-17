@@ -42,6 +42,40 @@ Recommended artifacts:
 - Marker section headers in instruction files.
 - Hook entry fingerprints for safe update and safe removal.
 
+Concrete examples:
+
+Version stamp file:
+
+```text
+.tool/integration.stamp
+tool-integration-version=0.3.0
+installed-at=2026-04-17T10:00:00Z
+```
+
+Marker-bounded instruction section:
+
+```text
+<!-- AUTO-GENERATED: tool integration start -->
+...managed instruction content...
+<!-- AUTO-GENERATED: tool integration end -->
+```
+
+Hook fingerprint metadata example:
+
+```json
+{
+    "toolId": "example-tool",
+    "integrationVersion": "0.3.0",
+    "managed": true
+}
+```
+
+Conflict handling guidance:
+
+1. If marker exists with unknown fingerprint, stop and emit a manual-resolution warning.
+2. If version stamp mismatches expected migration path, run update migration instead of blind overwrite.
+3. On uninstall, remove only marker/fingerprint-owned entries.
+
 This avoids ambiguous uninstall and prevents deleting user-authored content.
 
 ## Pattern 4: Fallback-first behavior

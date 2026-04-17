@@ -45,6 +45,57 @@ All skills should comply with the [Agent Skills Specification](../topics/agentsk
 | migration-assistant | Helps users upgrade from old instruction templates |
 | marketplace-curation | Applies consistent intake rules for third-party skill directories |
 
+## Tiered verification outcomes
+
+Use these checks to confirm each tier is correctly installed and active.
+
+### Core required tier
+
+Expected signals:
+
+- Required core skills are discoverable in the host skill list.
+- One should-trigger prompt activates the expected skill path.
+- One near-miss prompt does not activate unrelated core skills.
+
+Failure signals:
+
+- Skill not discovered in expected install path.
+- Prompt behavior diverges from trigger contract.
+
+### Framework-required tier
+
+Expected signals:
+
+- Framework-specific extension skill is installed in the expected scope.
+- Host-specific behavior works (for example hooks, MCP session mode, or rule layering).
+- Verification prompt reflects framework caveats accurately.
+
+Failure signals:
+
+- Framework skill exists but host capability path is not active.
+- Host-specific fallback behavior is undocumented or incorrect.
+
+### Optional tier
+
+Expected signals:
+
+- Optional skills install cleanly without breaking core workflow.
+- Optional skills can be disabled with no regression to core required behavior.
+
+Failure signals:
+
+- Optional skills override or disrupt required skill behavior.
+- Optional path introduces prompt-only dependencies in automation workflows.
+
+## Verification command evidence
+
+For each promoted skill, record:
+
+1. Install scope and path used.
+2. Verification prompt(s) executed.
+3. Observed activation/non-activation result.
+4. Rollback step if behavior drifts.
+
 ## Skill packaging guidance
 
 - Keep skill files modular and versioned.
