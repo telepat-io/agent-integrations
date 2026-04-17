@@ -100,6 +100,7 @@ Operational note:
 - Never hardcode secrets into manifest defaults or server code.
 - Use sensitive config fields and host secure storage for API keys.
 - Provide privacy policy URLs when extensions send user data to external services.
+- For Claude Desktop skill execution, assume an isolated runtime with restricted outbound URL access. In practice, allowed domains are primarily package registries and Anthropic endpoints (for example `api.anthropic.com`, `pypi.org`, `npmjs.org`, and `github.com`), so workflows that require arbitrary web access should not be treated as baseline-capable.
 
 ## Troubleshooting matrix
 
@@ -108,6 +109,7 @@ Operational note:
 | Extension will not install | Corrupt/invalid `.mcpb` or old app version | Re-download bundle and check Claude Desktop version | Repack bundle and update app |
 | Extension appears installed but tools are missing | Missing required extension settings or stale registry state | Open extension settings and review required fields | Complete config and restart Claude Desktop |
 | Configuration errors at runtime | Invalid file paths or credentials | Validate configured paths and auth values | Correct settings and retry |
+| URL/network requests fail unexpectedly | Runtime domain restrictions in isolated skill environment | Check whether destination host is in allowed domains | Route through supported endpoints or move network-dependent steps outside the skill runtime |
 | Permission/security warning on install | OS security policy or enterprise policy conflict | Check OS security settings and org policy state | Adjust policy/permissions and reinstall |
 | Server conversion confusion | Existing MCP server not packaged as MCPB | Confirm `manifest.json` exists and package output is `.mcpb` | Use `mcpb pack` workflow |
 
