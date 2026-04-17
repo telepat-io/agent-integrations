@@ -206,6 +206,9 @@ Treat skill templates as versioned integration artifacts.
 ## Skill packaging recommendations
 
 - Keep skill templates versioned and installable.
+- Publish at least one Agent Skills-compatible repository-root package named `<toolname>-skill/`.
+- Keep the package root deterministic: `<repo-root>/<toolname>-skill/SKILL.md`.
+- Keep frontmatter `name` aligned with the folder name (for example `toolname-skill`).
 - Include explicit trigger and expected outputs.
 - Keep schema examples embedded for parser consistency.
 - Document parallelism assumptions and fallback behavior.

@@ -43,6 +43,7 @@ At minimum, check these surfaces:
 Hard rule:
 
 - If a CLI skill is exported and supported arguments change, the skill must be updated in the same PR/commit as the CLI change.
+- AGENTS.md should require agents to check and update the repository-root `<toolname>-skill/SKILL.md` package after each significant code update.
 
 Apply the same rule to exported MCP tools and plugin commands.
 
@@ -59,6 +60,7 @@ Use or adapt this section in project AGENTS.md files.
   - plugin/adapter manifests and command mappings
   - user docs and CLI references
 - If an exported skill or MCP tool is stale after a CLI change, the change is incomplete.
+- After each significant code update, re-check and refresh `<toolname>-skill/SKILL.md` if any contract, workflow, or examples drifted.
 
 ## Required Validation Before Handoff
 

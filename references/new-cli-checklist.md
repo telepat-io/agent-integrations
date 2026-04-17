@@ -43,6 +43,8 @@ Use this checklist to bootstrap agent integrations in a new CLI project.
 ## Stage 5: Skills and reusable behavior
 
 - Decide whether to ship local skills, remote skills, or both.
+- Produce at least one Agent Skills-compatible package at repository root using `<toolname>-skill/` naming.
+- Ensure the canonical file path is `<repo-root>/<toolname>-skill/SKILL.md`.
 - Add install command for skill templates where platform supports it.
 - Define marketplace intake policy (allowed sources, review criteria, and rejection rules).
 - Provide verification command users can run after install.
