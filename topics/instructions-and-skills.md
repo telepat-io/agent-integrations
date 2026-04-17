@@ -230,6 +230,8 @@ Mitigations:
 - Discovery order documented with examples.
 - Update path documented for versioned templates.
 
+For repository policy that keeps skills, MCP tools, and plugins synchronized with CLI argument changes, see [AGENTS.md Maintenance and Sync Rules](agents-maintenance-and-sync.md).
+
 ## Context7-derived integration learnings
 
 ### Skills are declarative trigger contracts
