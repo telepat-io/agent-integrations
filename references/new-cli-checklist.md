@@ -8,6 +8,9 @@ Use this checklist to bootstrap agent integrations in a new CLI project.
 - Add explicit install and uninstall commands per framework.
 - Ensure idempotent writes to config and instruction files.
 - Add dry-run mode for install and uninstall actions.
+- Ensure command flows support non-interactive execution when all required values are passed as explicit flags.
+- Ensure required inputs are available as exhaustive arguments (no prompt-only required paths for scripted runs).
+- Provide machine-readable output where it makes sense (recommend `--json`) and keep output contracts stable.
 
 ## Stage 2: Instruction files
 
@@ -46,7 +49,7 @@ Use this checklist to bootstrap agent integrations in a new CLI project.
 - Include troubleshooting for skill discovery and restart requirements.
 - Validate every shipped skill against SKILL.md frontmatter and naming contract.
 - Add trigger eval set with should-trigger and near-miss should-not-trigger prompts.
-- Require non-interactive script behavior (`--help`, explicit flags, deterministic exit codes).
+- Reuse Stage 1 non-interactive and output contracts during skill evaluations to avoid introducing prompt-only workflows.
 - Require with-skill versus baseline output comparison before default promotion.
 - Record source revision, eval summary, and rollback steps for each approved skill.
 - For Claude-native skills, align with Anthropic best practices: specific description trigger contract, concise `SKILL.md` core path, and anti-pattern checks.
