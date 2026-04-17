@@ -2,202 +2,253 @@
 
 ## Use case
 
-Hermes Agent is a strong target when you need both:
+Hermes is a strong integration target when you want one host to combine:
 
-- direct agent extensibility inside Hermes (tools, providers, plugin engines, skills), and
-- interoperability with external MCP ecosystems.
+- reusable skills,
+- tightly scoped MCP servers, and
+- extensible Python plugins (tools, hooks, slash commands, CLI commands).
 
-For CLI maintainers, this gives a practical model for building a layered integration story:
+Use these native Hermes surfaces first. Treat AGENTS.md as supplemental guidance.
 
-1. Internal extension points for product-native behavior.
-2. MCP boundaries for external tools and host compatibility.
+## Capability support status
 
-## Required assets
+| Capability | Status | Primary files and commands |
+| --- | --- | --- |
+| Skills | Supported | `~/.hermes/skills/`, optional external dirs from `~/.hermes/config.yaml`, `/skills`, `hermes skills ...` |
+| MCP servers | Supported | `~/.hermes/config.yaml` under `mcp_servers`, `/reload-mcp` |
+| Plugins | Supported | `~/.hermes/plugins/<plugin-name>/`, `plugin.yaml`, `__init__.py`, `/plugins` |
+| Plugin-bundled skills | Supported | `~/.hermes/plugins/<plugin>/skills/*/SKILL.md`, loaded via `skill_view("plugin:skill")` |
 
-- A clear extension decision tree (tool vs skill vs provider vs plugin).
-- Standardized checklists for each Hermes extension type.
-- Explicit coverage of both MCP directions:
-  - Hermes consuming external MCP servers.
-  - Hermes exposing itself as an MCP server.
+## Required files and directories
 
-## Integration pattern
+```text
+~/.hermes/
+  config.yaml
+  skills/
+    devops/
+      deploy-k8s/
+        SKILL.md
+        references/
+  plugins/
+    calculator/
+      plugin.yaml
+      __init__.py
+      schemas.py
+      tools.py
+      skills/
+        my-workflow/
+          SKILL.md
+```
 
-Hermes extension work is not one installer flow. It is a set of explicit contribution tracks:
+Optional shared skills directory configured as external source:
 
-- Add tool modules and toolset registration.
-- Add provider wiring across auth, model catalog, runtime resolution, and CLI menus.
-- Add gateway platform adapters across config, runner, CLI, toolsets, and docs.
-- Add memory/context plugins via provider plugin contracts.
-- Add skills with SKILL metadata and secure setup declarations.
+- `~/.agents/skills/`
 
-## Extension decision tree
+## Installation pattern
 
-Choose extension type before coding:
+Recommended command shape for a wrapper CLI:
 
-- Skill: instructions plus existing tools are enough.
-- Tool: deterministic runtime behavior, API integration, streaming, or binary handling.
-- Provider: first-class model-provider UX and protocol handling in Hermes runtime.
-- Platform adapter: new messaging channel integration through gateway.
-- Memory plugin: external persistent memory backend.
-- Context engine plugin: replacement context-management strategy.
-- MCP config: external tools without native Hermes implementation.
+```bash
+toolctl hermes install
+toolctl hermes uninstall
+toolctl hermes status
+```
 
-## Source-anchored implementation deep dive
+Expected install behavior:
 
-Reference Hermes docs for these tracks:
+1. Create or patch `~/.hermes/config.yaml` safely.
+2. Scaffold at least one local skill under `~/.hermes/skills/`.
+3. Optionally scaffold one plugin under `~/.hermes/plugins/`.
+4. Optionally append an MCP server entry under `mcp_servers`.
+5. Never overwrite unrelated user config keys.
 
-- Adding tools.
-- Adding providers.
-- Adding platform adapters.
-- Building memory provider plugins.
-- Building context engine plugins.
-- Creating skills.
-- MCP feature usage and server mode.
+## Skills setup
 
-What to replicate in a new CLI integration manual:
+### Skill source of truth
 
-1. Keep extension surfaces separate and explicit.
-2. Provide file-level touchpoint checklists, not only conceptual guidance.
-3. Document verification steps and parity audits for each extension type.
-4. Treat runtime discovery and capability negotiation as first-class behavior.
+Primary skills directory:
 
-## Hermes extension tracks
+- `~/.hermes/skills/`
 
-### Adding tools
+Hermes can also scan external skill directories configured in `~/.hermes/config.yaml`:
 
-Use a native Hermes tool when behavior must execute through a deterministic code path.
+```yaml
+skills:
+  external_dirs:
+    - ~/.agents/skills
+    - ${SKILLS_REPO}/skills
+```
 
-Required touchpoints:
+External dirs are read-only for discovery. Local skills in `~/.hermes/skills/` take precedence on name conflicts.
 
-1. tools module with availability check, handler, schema, and registration.
-2. toolset registration.
-3. optional setup-wizard env metadata when credentials are needed.
+### Minimal SKILL.md example
 
-Rules to preserve:
+`~/.hermes/skills/devops/deploy-k8s/SKILL.md`:
 
-- return JSON strings from handlers,
-- return error objects instead of uncaught exceptions,
-- keep schemas strict and tool scope minimal.
+```md
+---
+name: deploy-k8s
+description: Safely deploy a service to Kubernetes with rollback checks.
+version: 1.0.0
+metadata:
+  hermes:
+    category: devops
+    tags: [kubernetes, deployment]
+---
 
-### Adding providers
+# Deploy K8s
 
-Only add built-in providers when you need first-class UX and runtime behavior.
+## When to Use
+Use for Kubernetes deployment and rollback tasks.
 
-Core layering to keep aligned:
+## Procedure
+1. Validate target namespace and image tag.
+2. Apply rollout manifest.
+3. Watch rollout status.
 
-1. credential resolution,
-2. model catalogs and aliases,
-3. runtime provider resolution,
-4. CLI model/setup discoverability,
-5. auxiliary-model defaults and model metadata.
+## Verification
+Run kubectl rollout status and health checks.
+```
 
-If provider protocol is not OpenAI-compatible, isolate provider logic in adapter modules and route by explicit api mode.
+### Skill operations
 
-### Adding platform adapters
+Useful commands:
 
-Adapters are end-to-end gateway integrations, not isolated files.
+```bash
+hermes skills list
+hermes skills browse
+hermes skills search kubernetes
+hermes skills install official/research/arxiv
+hermes skills check
+hermes skills update
+```
 
-Typical subsystem checklist:
+In chat:
 
-1. platform enum and config mapping,
-2. adapter implementation,
-3. gateway runner routing and auth controls,
-4. cross-platform delivery mappings,
-5. CLI setup/status integration,
-6. tool and toolset updates,
-7. tests and docs.
+```text
+/skills
+/skills search docker
+/plan design a migration strategy
+```
 
-Use parity audits against an established platform to catch hidden integration gaps.
+## MCP setup
 
-### Memory provider plugins
+Hermes MCP config lives in `~/.hermes/config.yaml` under `mcp_servers`.
 
-Use memory plugins for external persistent memory backends.
+### MCP config example
 
-Contract highlights:
+```yaml
+mcp_servers:
+  github:
+    command: "npx"
+    args: ["-y", "@modelcontextprotocol/server-github"]
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: "***"
+    enabled: true
+    timeout: 120
+    connect_timeout: 60
+    tools:
+      include: [list_issues, create_issue, search_code]
+      resources: false
+      prompts: false
 
-- implement required lifecycle and config methods,
-- keep availability checks local and fast,
-- keep sync hooks non-blocking,
-- use profile-scoped home paths,
-- preserve single active external memory provider behavior.
+  docs:
+    url: "https://mcp.docs.example.com"
+    auth: oauth
+    enabled: true
+    tools:
+      exclude: [delete_doc]
+      resources: true
+      prompts: true
+```
 
-### Context engine plugins
+### Filtering rules to document
 
-Use context-engine plugins when built-in compression strategy is not sufficient.
+- `tools.include` is allowlist.
+- `tools.exclude` is denylist.
+- If both are set, include wins.
+- `tools.resources` and `tools.prompts` control Hermes utility wrappers.
 
-Contract highlights:
+### MCP reload and verification
 
-- implement required engine interface methods,
-- maintain token and threshold counters,
-- ensure compressed outputs are valid message sequences,
-- activate via explicit config engine selection,
-- preserve single active context engine behavior.
+After config edits:
 
-### Creating skills
+```text
+/reload-mcp
+```
 
-Skills are preferred when capabilities are instruction-driven.
+Validation prompts:
 
-Key practices:
+- Tell me which MCP-backed tools are available right now.
+- List available resource and prompt wrappers for configured MCP servers.
 
-- keep SKILL metadata precise for triggering,
-- use platform/tool gating to avoid clutter,
-- separate secret env requirements from non-secret config fields,
-- use helper scripts for deterministic parsing,
-- evaluate trigger quality and output quality against baseline.
+## Plugin setup
 
-### MCP integration and server mode
+### Minimal plugin structure
 
-Document both modes clearly:
+```text
+~/.hermes/plugins/calculator/
+  plugin.yaml
+  __init__.py
+  schemas.py
+  tools.py
+```
 
-1. Hermes as MCP client: consumes external stdio or HTTP servers, supports per-server filtering, capability-aware wrappers, reload behavior, and optional sampling controls.
-2. Hermes as MCP server: exposes Hermes messaging tools to other MCP hosts in stdio mode.
+### Minimal plugin manifest
 
-Do not mix client and server setup examples in the same quickstart block.
+`~/.hermes/plugins/calculator/plugin.yaml`:
 
-## Verification workflow
+```yaml
+name: calculator
+version: 1.0.0
+description: Math calculator with conversion helpers
+provides_tools:
+  - calculate
+  - unit_convert
+provides_hooks:
+  - post_tool_call
+```
 
-1. Run targeted tests for the touched extension track.
-2. Run an interactive smoke test for affected CLI flows.
-3. Validate edge cases: missing credentials, invalid args, disabled capability paths.
-4. Confirm docs include both implementation checklist and troubleshooting guidance.
+### Registration pattern
 
-## Security notes
+`__init__.py` should register tools and hooks via `register(ctx)`.
 
-- Keep extension-specific auth and secret flows isolated.
-- Do not overexpose tool surfaces when filtering is available.
-- Treat MCP servers and plugin code as privileged execution surfaces.
+Key guidance:
 
-Shared guidance:
+- Tool handlers should return JSON strings.
+- Tool handlers should accept `**kwargs` for compatibility.
+- Plugin failures should fail open (plugin disabled), not crash Hermes.
 
-- ../topics/security-and-approvals.md
-- ../topics/observability-and-testing.md
-- ../topics/instructions-and-skills.md
-- ../topics/mcp-server-design.md
+### Plugin-bundled skills
+
+Plugins can ship `skills/*/SKILL.md` and register with `ctx.register_skill(...)`.
+These are namespaced (`plugin:skill`) and do not replace built-in skill names.
+
+## Verification checklist
+
+1. `hermes skills list` shows expected local and installed skills.
+2. Slash command invocation works for at least one skill.
+3. MCP config loads and `/reload-mcp` succeeds.
+4. Filtered MCP tool surface matches include and exclude policy.
+5. `/plugins` shows plugin with expected tool and hook count.
+6. Plugin tool call succeeds and returns valid JSON payload.
 
 ## Troubleshooting matrix
 
 | Symptom | Likely cause | Verify | Fix |
 | --- | --- | --- | --- |
-| Feature appears half-wired | One layer was updated but related layers were not | Run a file checklist audit for that extension type | Complete all required touchpoints before testing |
-| Works in tests but not in CLI flow | CLI menu wiring or setup path missing | Test both direct command and interactive flow | Add CLI/provider menu integration and rerun smoke checks |
-| Tool list is noisy or risky | No filtering or broad exposure policy | Inspect configured include and exclude filters | Whitelist minimal tool surface and disable unneeded wrappers |
-| Plugin loads but state leaks across profiles | Hardcoded home path used | Check plugin storage path usage | Use profile-scoped home from runtime kwargs |
+| Skill not discovered | Wrong directory or malformed frontmatter | Check `~/.hermes/skills/**/SKILL.md` and metadata | Fix path and frontmatter, then start new session |
+| Wrong skill version loaded | Local and external skill name collision | Compare local and external dirs for same `name` | Rename one skill or remove duplicate |
+| MCP server configured but tools missing | Over-filtered include or disabled wrappers | Inspect `tools.include/exclude/resources/prompts` | Relax filters and `/reload-mcp` |
+| MCP server never connects | Missing runtime, bad URL, or auth issues | Check command/url and auth settings in config | Fix runtime/auth and reload |
+| OAuth HTTP server keeps re-authing | Token refresh failure or invalid auth mode | Confirm `auth: oauth` and token state | Re-authorize and verify endpoint metadata |
+| Plugin appears but tools fail | Handler does not return JSON string | Inspect handler return payloads | Return `json.dumps(...)` for success and error paths |
+| Plugin hook crashes | Hook callback signature mismatch | Check callback params and `**kwargs` | Add compatible signature and fail-safe handling |
 
-## Validation checklist
+## Official references
 
-- Extension type selection rubric documented for contributors.
-- Tools, providers, adapters, plugins, skills, and MCP guidance are covered in this framework page.
-- MCP guidance covers both client and server operation modes.
-- Cross-links to shared security, testing, instructions, and MCP design topics are present.
-
-## Source alignment
-
-Primary upstream sources:
-
-- https://hermes-agent.nousresearch.com/docs/developer-guide/adding-tools
-- https://hermes-agent.nousresearch.com/docs/developer-guide/adding-providers
-- https://hermes-agent.nousresearch.com/docs/developer-guide/adding-platform-adapters
-- https://hermes-agent.nousresearch.com/docs/developer-guide/memory-provider-plugin
-- https://hermes-agent.nousresearch.com/docs/developer-guide/context-engine-plugin
-- https://hermes-agent.nousresearch.com/docs/developer-guide/creating-skills
-- https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp
+- https://hermes-agent.nousresearch.com/docs/user-guide/features/skills
+- https://hermes-agent.nousresearch.com/docs/reference/mcp-config-reference
+- https://hermes-agent.nousresearch.com/docs/guides/use-mcp-with-hermes
+- https://hermes-agent.nousresearch.com/docs/guides/work-with-skills
+- https://hermes-agent.nousresearch.com/docs/guides/build-a-hermes-plugin

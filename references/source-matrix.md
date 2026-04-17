@@ -66,6 +66,9 @@ This matrix tags each major recommendation with provenance.
 
 | Topic | Source Type | Primary Evidence |
 | --- | --- | --- |
+| OpenCode skills discovery paths and SKILL metadata constraints | Official Product Docs | https://opencode.ai/docs/skills/ |
+| OpenCode MCP local and remote server configuration plus oauth flows | Official Product Docs | https://opencode.ai/docs/mcp-servers/ |
+| OpenCode custom tools directory and tool definition contract | Official Product Docs | https://opencode.ai/docs/custom-tools/ |
 | OpenCode plugin-based pre-execution context injection | Reference Implementation | Plugin registration and pre-tool command injection template |
 | OpenClaw skill loading, precedence, gating, and lifecycle | Official Product Docs | https://docs.openclaw.ai/tools/skills |
 | OpenClaw skill creation flow and SKILL.md basics | Official Product Docs | https://docs.openclaw.ai/tools/creating-skills |
@@ -73,16 +76,27 @@ This matrix tags each major recommendation with provenance.
 | OpenClaw command surface controls and command catalog behavior | Official Product Docs | https://docs.openclaw.ai/tools/slash-commands |
 | ClawHub-native install/update/publish/sync workflows | Official Product Docs | https://docs.openclaw.ai/tools/clawhub |
 | OpenClaw profile-specific fallback behavior | Reference Implementation | Integration profile templates and tests in this manual's reference implementation |
-| Droid task-tool dispatch conventions | Reference Implementation | Task orchestration skill template and chunking contract |
-| Trae no-hook fallback to AGENTS.md | Reference Implementation | AGENTS-first installer logic and fallback template |
+| Factory skills location and SKILL frontmatter controls | Official Product Docs | https://docs.factory.ai/cli/configuration/skills |
+| Factory MCP registry, CLI management, and layered config model | Official Product Docs | https://docs.factory.ai/cli/configuration/mcp |
+| Factory hooks lifecycle events, registration flow, and path safety model | Official Product Docs | https://docs.factory.ai/cli/configuration/hooks-guide |
+| Trae skills directories, SKILL format, and .agents compatibility behavior | Official Product Docs | https://docs.trae.ai/ide/skills |
+| Trae MCP transports and protocol feature support | Official Product Docs | https://docs.trae.ai/ide/model-context-protocol?_lang=en |
+| Trae MCP manual/project config and install-link workflow | Official Product Docs | https://docs.trae.ai/ide/add-mcp-servers?_lang=en and https://docs.trae.ai/ide/mcp-server-install-links?_lang=en |
+| Trae agent-level MCP tool binding behavior | Official Product Docs | https://docs.trae.ai/ide/use-mcp-servers-in-agents?_lang=en |
+| Cursor skill directories and SKILL authoring contract | Official Product Docs | https://cursor.com/docs/skills |
+| Cursor hooks event model, file locations, and command schema | Official Product Docs | https://cursor.com/docs/hooks |
+| Cursor mcp config locations, interpolation, and auth patterns | Official Product Docs | https://cursor.com/docs/mcp |
 | Cursor alwaysApply rule strategy | Reference Implementation | Cursor rule writer module with alwaysApply template |
 
-## VS Code MCP host behavior
+## VS Code customization behavior
 
 | Topic | Source Type | Primary Evidence |
 | --- | --- | --- |
 | mcp.json workspace vs user scope | Official Product Docs | VS Code MCP server docs |
 | MCP trust model and sandboxing support | Official Product Docs | VS Code MCP server docs |
+| Agent skills file locations and SKILL.md constraints | Official Product Docs | VS Code agent skills docs |
+| Hook file locations, event model, and command schema | Official Product Docs | VS Code hooks docs |
+| Plugin manifest and bundled skills/hooks/MCP behavior | Official Product Docs | VS Code agent plugins docs |
 
 ## Companion memory integration profile
 
@@ -103,13 +117,11 @@ This matrix tags each major recommendation with provenance.
 
 | Topic | Source Type | Primary Evidence |
 | --- | --- | --- |
-| Tool authoring contract and discovery model | Official Product Docs | Hermes developer guide: adding tools |
-| Provider layering and api-mode branching model | Official Product Docs | Hermes developer guide: adding providers |
-| Platform adapter cross-surface checklist and parity audit pattern | Official Product Docs | Hermes developer guide: adding platform adapters |
-| Memory provider plugin lifecycle and single-provider rule | Official Product Docs | Hermes developer guide: memory provider plugins |
-| Context engine plugin contract and single-engine activation model | Official Product Docs | Hermes developer guide: context engine plugins |
-| Skill metadata contract, secure setup fields, and distribution guidance | Official Product Docs | Hermes developer guide: creating skills |
-| MCP client/server dual-mode behavior, filtering, and sampling controls | Official Product Docs | Hermes user guide: MCP feature page |
+| Skills source-of-truth directory, progressive disclosure, and secure setup behavior | Official Product Docs | https://hermes-agent.nousresearch.com/docs/user-guide/features/skills |
+| Skill operational workflows (find/use/install/configure skills) | Official Product Docs | https://hermes-agent.nousresearch.com/docs/guides/work-with-skills |
+| MCP server config schema, filtering semantics, and OAuth behavior | Official Product Docs | https://hermes-agent.nousresearch.com/docs/reference/mcp-config-reference |
+| Practical MCP usage patterns and safe filtering workflow | Official Product Docs | https://hermes-agent.nousresearch.com/docs/guides/use-mcp-with-hermes |
+| Plugin file layout, registration model, hooks, and bundled skills | Official Product Docs | https://hermes-agent.nousresearch.com/docs/guides/build-a-hermes-plugin |
 
 ## Skill creation and quality workflow
 
@@ -128,6 +140,8 @@ This matrix tags each major recommendation with provenance.
 | Skill-creator iterative workflow pattern | Reference Implementation | [Anthropic skill-creator SKILL.md](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md) |
 
 ## Direct reference URLs used in this update
+
+For grouped official source links used across docs, see [References](references.md).
 
 - https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices
 - https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview

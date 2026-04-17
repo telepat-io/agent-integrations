@@ -4,7 +4,7 @@ This manual documents best practices for integrating a CLI tool with modern codi
 
 - reference implementation patterns.
 - a companion state service integration pattern for MCP and lifecycle hooks.
-- official platform docs for Claude Code/Desktop, ChatGPT, Codex, Gemini, MCP, VS Code MCP host behavior, and Context7.
+- official platform docs for Claude Code/Desktop, ChatGPT, Codex, Gemini, MCP, VS Code customization surfaces (skills, hooks, MCP, plugins), and Context7.
 
 ## Audience
 
@@ -40,7 +40,7 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - [Cursor](frameworks/cursor.md)
 - [Factory Droid](frameworks/factory-droid.md)
 - [Trae and Trae-CN](frameworks/trae.md)
-- [VS Code as MCP Host](frameworks/vscode-mcp-host.md)
+- [VS Code](frameworks/vscode.md)
 
 ### Deep technical topics
 
@@ -56,10 +56,12 @@ This manual documents best practices for integrating a CLI tool with modern codi
 ### References
 
 - [Source and Evidence Matrix](references/source-matrix.md)
+- [References](references/references.md)
 - [New CLI Integration Checklist](references/new-cli-checklist.md)
 - [Required Skills Matrix](references/required-skills-matrix.md)
 - [Snippets Cookbook](references/snippets-cookbook.md)
 - [Compatibility Matrix](references/compatibility-matrix.md)
+- [Framework Weakness Backlog](references/framework-weakness-backlog.md)
 - [Docs Maintenance and Changelog](references/docs-maintenance-changelog.md)
 
 ### External references used
