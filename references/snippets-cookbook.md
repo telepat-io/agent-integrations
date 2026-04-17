@@ -274,6 +274,23 @@ description: Use this skill when users are installing, repairing, or validating 
 ]
 ```
 
+## New skill evaluation quick loop
+
+Use this sequence when evaluating a new or revised skill version.
+
+```bash
+# 1) Run baseline (without candidate skill enabled) and save outputs
+toolctl eval skill --skill diagnostics --dataset evals/diagnostics.json --mode baseline --out reports/diagnostics-baseline.json
+
+# 2) Run candidate skill on the same dataset
+toolctl eval skill --skill diagnostics --dataset evals/diagnostics.json --mode candidate --out reports/diagnostics-candidate.json
+
+# 3) Compare trigger precision and output quality deltas
+toolctl eval compare --baseline reports/diagnostics-baseline.json --candidate reports/diagnostics-candidate.json --format table
+```
+
+Pair this with the checklist and scoring guidance in [Agent Skills Specification](../topics/agentskills-specification.md).
+
 ## Eval case schema with assertions
 
 ```json

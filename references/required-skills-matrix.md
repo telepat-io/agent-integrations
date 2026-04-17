@@ -2,6 +2,10 @@
 
 This matrix defines what a new CLI project should ship as skills or reusable prompt modules for each framework profile.
 
+## Specification reference
+
+All skills should comply with the [Agent Skills Specification](../topics/agentskills-specification.md), including frontmatter contract, trigger description quality, and evaluation expectations.
+
 ## Skill tiers
 
 - Core required: should exist for all integrations.

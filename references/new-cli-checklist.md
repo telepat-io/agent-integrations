@@ -48,6 +48,7 @@ Use this checklist to bootstrap agent integrations in a new CLI project.
 - Provide verification command users can run after install.
 - Include troubleshooting for skill discovery and restart requirements.
 - Validate every shipped skill against SKILL.md frontmatter and naming contract.
+- Validate against the [Agent Skills Specification](../topics/agentskills-specification.md) for schema baseline, trigger quality, evaluation loop, and script usage boundaries.
 - Add trigger eval set with should-trigger and near-miss should-not-trigger prompts.
 - Reuse Stage 1 non-interactive and output contracts during skill evaluations to avoid introducing prompt-only workflows.
 - Require with-skill versus baseline output comparison before default promotion.

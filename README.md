@@ -49,6 +49,7 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - [MCP Bundles (MCPB)](topics/mcpb-bundles.md)
 - [Hooks and Lifecycle Control](topics/hooks-and-lifecycle.md)
 - [Instruction Layers and Skills](topics/instructions-and-skills.md)
+- [Agent Skills Specification](topics/agentskills-specification.md)
 - [AGENTS.md Maintenance and Sync Rules](topics/agents-maintenance-and-sync.md)
 - [Skills Marketplace Integration](topics/skills-marketplace-integration.md)
 - [Security and Approvals](topics/security-and-approvals.md)

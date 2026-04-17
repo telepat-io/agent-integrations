@@ -13,6 +13,7 @@ For implementation planning, treat this as a product surface with account/plan a
 ## Required assets for a CLI integration
 
 - A skill package that follows the Agent Skills format and clear trigger descriptions.
+- For repository standards on `SKILL.md` contract, trigger design, evaluation, and scripts, see [Agent Skills Specification](../topics/agentskills-specification.md).
 - Workspace-ready guidance for install/share permissions and RBAC paths.
 - Remote MCP server endpoints for developer mode app creation (where used).
 - Safety docs for write-action confirmations and prompt-injection risk.

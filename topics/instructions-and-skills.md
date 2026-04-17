@@ -66,6 +66,7 @@ description: Use this skill when users are installing or repairing CLI agent int
 ## SKILL.md contract and structure
 
 Use the Agent Skills specification as the baseline contract for portable skills.
+For the full schema baseline, quickstart mapping, description optimization, evaluation loop, and script rules, see [Agent Skills Specification](agentskills-specification.md).
 
 - Required frontmatter fields:
 	- `name`: lowercase letters, numbers, and hyphens only; should match directory name.

@@ -31,6 +31,21 @@ This page defines how to maintain this manual and tracks notable documentation u
 
 ## Changelog
 
+## 2026-04-17 (Agent Skills specification topic)
+
+Summary:
+- Added a new canonical Agent Skills specification topic that consolidates quickstart, best practices, description optimization, evaluation guidance, script usage, and formal specification baseline.
+- Wired cross-links from core navigation and skill governance pages so specification guidance is discoverable from authoring and checklist flows.
+
+Impacted pages:
+- docs/agent-integrations/topics/agentskills-specification.md
+- docs/agent-integrations/README.md
+- docs/agent-integrations/topics/instructions-and-skills.md
+- docs/agent-integrations/references/required-skills-matrix.md
+- docs/agent-integrations/references/new-cli-checklist.md
+- docs/agent-integrations/frameworks/chatgpt-desktop.md
+- docs/agent-integrations/references/docs-maintenance-changelog.md
+
 ## 2026-04-17 (ChatGPT Desktop framework coverage)
 
 Summary:
