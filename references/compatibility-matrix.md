@@ -23,6 +23,7 @@ This matrix tracks integration assumptions used in this manual.
 | --- | --- | --- | --- | --- | --- | --- |
 | Claude Code | Full | Full | Full | Full | Full | Richest lifecycle hooks and strong policy surface |
 | Claude Desktop | Full | Partial | Full | Full | N/A | Local desktop host with extension packaging (`.mcpb`) and admin policy controls |
+| ChatGPT Desktop | Full | Partial | Full | Full | N/A | Product skills plus developer-mode MCP apps; write actions are confirmation-gated |
 | Codex | Full | Partial | Full | Full | Full | Hook surface evolving; enforce documented subset |
 | Gemini CLI/API | Full | Full | Partial | Full | Full | SDK MCP support marked experimental in docs |
 | VS Code MCP Host | N/A host-level | N/A host-level | Full | N/A host-level | N/A host-level | Host runtime for MCP servers; use mcp.json scopes |

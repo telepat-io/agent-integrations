@@ -4,7 +4,7 @@ This manual documents best practices for integrating a CLI tool with modern codi
 
 - reference implementation patterns.
 - a companion state service integration pattern for MCP and lifecycle hooks.
-- official platform docs for Claude Code, Codex, Gemini, MCP, VS Code MCP host behavior, and Context7.
+- official platform docs for Claude Code/Desktop, ChatGPT, Codex, Gemini, MCP, VS Code MCP host behavior, and Context7.
 
 ## Audience
 
@@ -31,6 +31,7 @@ This manual documents best practices for integrating a CLI tool with modern codi
 
 - [Claude Code](frameworks/claude-code.md)
 - [Claude Desktop](frameworks/claude-desktop.md)
+- [ChatGPT Desktop](frameworks/chatgpt-desktop.md)
 - [Codex](frameworks/codex.md)
 - [Gemini CLI and API](frameworks/gemini.md)
 - [Hermes Agent](frameworks/hermes-agent.md)
@@ -68,6 +69,8 @@ This manual documents best practices for integrating a CLI tool with modern codi
 - [Anthropic Skills Guide (API)](https://platform.claude.com/docs/en/build-with-claude/skills-guide)
 - [Claude Desktop Local MCP Servers](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
 - [Claude Custom Skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
+- [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt)
+- [ChatGPT Developer mode](https://developers.openai.com/api/docs/guides/developer-mode)
 - [Agent Skills Quickstart](https://agentskills.io/skill-creation/quickstart)
 - [Agent Skills Best Practices](https://agentskills.io/skill-creation/best-practices)
 - [Optimizing Skill Descriptions](https://agentskills.io/skill-creation/optimizing-descriptions)

@@ -5,7 +5,7 @@ This page defines how to maintain this manual and tracks notable documentation u
 ## Maintenance workflow
 
 1. Source refresh
-- Re-check official docs for Claude, Codex, Gemini, MCP, VS Code host, and Context7.
+- Re-check official docs for Claude, ChatGPT, Codex, Gemini, MCP, VS Code host, and Context7.
 - Re-check implementation-derived reference modules for installer logic, hooks, instructions, and MCP dispatch.
 
 2. Drift detection
@@ -30,6 +30,20 @@ This page defines how to maintain this manual and tracks notable documentation u
 - Immediate review: after major framework hook/MCP changes.
 
 ## Changelog
+
+## 2026-04-17 (ChatGPT Desktop framework coverage)
+
+Summary:
+- Added a new ChatGPT Desktop framework guide with Skills workflow coverage and developer-mode MCP setup guidance.
+- Documented admin/RBAC controls, confirmation-gated write actions, and security considerations for high-risk developer mode usage.
+- Updated manual navigation and evidence/compatibility references to include ChatGPT Skills and Developer mode sources.
+
+Impacted pages:
+- docs/agent-integrations/frameworks/chatgpt-desktop.md
+- docs/agent-integrations/README.md
+- docs/agent-integrations/references/source-matrix.md
+- docs/agent-integrations/references/compatibility-matrix.md
+- docs/agent-integrations/references/docs-maintenance-changelog.md
 
 ## 2026-04-17 (Claude Desktop and MCPB coverage)
 

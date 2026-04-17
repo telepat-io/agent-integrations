@@ -35,6 +35,15 @@ This matrix tags each major recommendation with provenance.
 | Manifest required fields, server types, compatibility, and user_config schema | Official Spec | modelcontextprotocol/mcpb MANIFEST.md |
 | MCPB CLI lifecycle (`init`, `validate`, `pack`, `sign`, `verify`, `info`, `unsign`) | Official Product Docs | modelcontextprotocol/mcpb CLI.md |
 
+## ChatGPT Desktop skills and developer mode
+
+| Topic | Source Type | Primary Evidence |
+| --- | --- | --- |
+| Skills lifecycle (create, upload, install, share) and workspace controls | Official Product Docs | OpenAI Help Center: Skills in ChatGPT |
+| Enterprise/Edu admin toggles for skills publish/install and compliance metadata | Official Product Docs | OpenAI Help Center: Skills in ChatGPT |
+| Developer-mode MCP app setup, transport support, and auth modes | Official Product Docs | OpenAI Developers: ChatGPT developer mode |
+| Write-action confirmation model and `readOnlyHint` behavior | Official Product Docs | OpenAI Developers: ChatGPT developer mode |
+
 ## Codex
 
 | Topic | Source Type | Primary Evidence |
@@ -125,6 +134,8 @@ This matrix tags each major recommendation with provenance.
 - https://platform.claude.com/docs/en/build-with-claude/skills-guide
 - https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop
 - https://support.claude.com/en/articles/12512198-how-to-create-custom-skills
+- https://help.openai.com/en/articles/20001066-skills-in-chatgpt
+- https://developers.openai.com/api/docs/guides/developer-mode
 - https://agentskills.io/skill-creation/quickstart
 - https://agentskills.io/skill-creation/best-practices
 - https://agentskills.io/skill-creation/optimizing-descriptions
