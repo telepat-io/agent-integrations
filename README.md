@@ -18,14 +18,14 @@ Choose your starting guide by host and setup goal:
 
 | Goal | Start here |
 | --- | --- |
-| Claude Code project integration with hooks and MCP | `frameworks/claude-code.md` |
-| Claude Desktop local MCP setup | `frameworks/claude-desktop.md` |
-| Codex + skill-oriented workflow | `frameworks/codex.md` |
-| Gemini CLI/API integration | `frameworks/gemini.md` |
-| VS Code MCP host setup | `frameworks/vscode.md` |
-| Cross-host architecture first (before framework specifics) | `topics/architecture-patterns.md` |
+| Claude Code project integration with hooks and MCP | [`frameworks/claude-code.md`](frameworks/claude-code.md) |
+| Claude Desktop local MCP setup | [`frameworks/claude-desktop.md`](frameworks/claude-desktop.md) |
+| Codex + skill-oriented workflow | [`frameworks/codex.md`](frameworks/codex.md) |
+| Gemini CLI/API integration | [`frameworks/gemini.md`](frameworks/gemini.md) |
+| VS Code MCP host setup | [`frameworks/vscode.md`](frameworks/vscode.md) |
+| Cross-host architecture first (before framework specifics) | [`topics/architecture-patterns.md`](topics/architecture-patterns.md) |
 
-If unsure, run this order first: `references/new-cli-checklist.md` -> `topics/instructions-and-skills.md` -> one framework guide.
+If unsure, run this order first: [`references/new-cli-checklist.md`](references/new-cli-checklist.md) → [`topics/instructions-and-skills.md`](topics/instructions-and-skills.md) → one framework guide.
 
 ## What this manual covers
 
