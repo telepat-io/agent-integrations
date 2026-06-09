@@ -134,3 +134,12 @@ These learnings are directly relevant to CLI-to-agent integration and can be reu
 
 - A profile can have strong MCP support without offering runtime hook callbacks.
 - Treat hook lifecycle as a separate capability that must be documented independently.
+
+## Implementation reference
+
+Ideon implements the dual transport profile described above:
+
+- **stdio**: `ideon mcp serve` — spawns local subprocess transport
+- **Streamable HTTP**: `ideon mcp serve-http --api-key <key>` — Express-based HTTP transport with bearer auth, stateful sessions, and Origin validation
+- Both transports share the same tool contract via `registerIdeonTools()`
+- Source: `src/integrations/mcp/server.ts`, `src/integrations/mcp/httpServer.ts`, `src/integrations/mcp/httpMiddleware.ts`

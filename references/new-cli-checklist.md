@@ -45,7 +45,7 @@ Use this checklist to bootstrap agent integrations in a new CLI project.
 - Decide whether to ship local skills, remote skills, or both.
 - Produce at least one Agent Skills-compatible installable package at repository root using deterministic naming.
 - For user-installable portable bundles, prefer `<toolname>-skill/`.
-- For repository-internal CLI workflow bundles, prefer `<toolname>-cli-skill/`.
+- For repository-internal CLI workflow bundles, prefer `skill/<toolname>-cli/`.
 - Ensure the canonical file path is `<repo-root>/<package-name>/SKILL.md`.
 - Do not use internal validation metadata identifiers as installable package names.
 - Add install command for skill templates where platform supports it.

@@ -1,6 +1,6 @@
 # Compatibility Matrix
 
-Last updated: 2026-04-17
+Last updated: 2026-06-09
 
 This matrix tracks integration assumptions used in this manual.
 
@@ -32,6 +32,7 @@ This matrix tracks integration assumptions used in this manual.
 | Cursor | Full | Fallback | Partial | Partial | N/A | Rules-driven model with alwaysApply pattern |
 | Factory Droid | Full | Fallback | Partial | Full | Full | Task orchestration and AGENTS-driven controls |
 | Trae / Trae-CN | Full | Fallback | Partial | Full | Full | AGENTS-first fallback where hooks unavailable |
+| Pi | Full | Fallback | Full | Full | Partial | Skills array + mcp.json; pi-mcp-adapter for MCP proxy |
 
 ## Install footprint matrix (expected post-install artifacts)
 
@@ -39,7 +40,7 @@ This matrix tracks integration assumptions used in this manual.
 | --- | --- | --- | --- |
 | Claude Code | `AGENTS.md`, optional `CLAUDE.md`, host config updates | host-recognized skills directory or repo skill package | local/remote MCP config in host settings |
 | Claude Desktop | host config and policy files | local skill package path when supported by host workflow | local desktop MCP server registration |
-| Codex | repo instruction files and Codex config overlays | installable `<tool>-skill/` or `<tool>-cli-skill/` package | MCP server registration/config per Codex mode |
+| Codex | repo instruction files and Codex config overlays | installable `skill/<tool>-cli/` package | MCP server registration/config per Codex mode |
 | Gemini CLI/API | `GEMINI.md` and repo instruction layers | skill bundle where host supports it | Gemini MCP configuration (experimental paths vary) |
 | VS Code MCP Host | workspace/user MCP config (`mcp.json` scope variants) | N/A host-level by default | MCP host server entries |
 | OpenClaw | `AGENTS.md` plus `.agents/` config | workspace/project/global skill scopes | OpenClaw MCP endpoints where configured |
@@ -58,6 +59,7 @@ Use this matrix as verification evidence after install: if expected artifacts ar
 | claw install | Yes | N/A |
 | droid install | Yes | N/A |
 | trae install | Yes | N/A |
+| pi install | Yes (Ideon `@telepat/ideon`) | Via pi-mcp-adapter + settings/mcp.json |
 | mcp server run | Yes | Yes |
 
 ## Context7 reference profile (integration surfaces)

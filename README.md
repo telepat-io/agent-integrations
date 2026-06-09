@@ -22,6 +22,7 @@ Choose your starting guide by host and setup goal:
 | Claude Desktop local MCP setup | [`frameworks/claude-desktop.md`](frameworks/claude-desktop.md) |
 | Codex + skill-oriented workflow | [`frameworks/codex.md`](frameworks/codex.md) |
 | Gemini CLI/API integration | [`frameworks/gemini.md`](frameworks/gemini.md) |
+| Pi agent integration | [`frameworks/pi.md`](frameworks/pi.md) |
 | VS Code MCP host setup | [`frameworks/vscode.md`](frameworks/vscode.md) |
 | Cross-host architecture first (before framework specifics) | [`topics/architecture-patterns.md`](topics/architecture-patterns.md) |
 
@@ -58,6 +59,7 @@ Do not use internal metadata identifiers as installable skill package names.
 - [ChatGPT Desktop](frameworks/chatgpt-desktop.md)
 - [Codex](frameworks/codex.md)
 - [Gemini CLI and API](frameworks/gemini.md)
+- [Pi](frameworks/pi.md)
 - [Hermes Agent](frameworks/hermes-agent.md)
 - [OpenCode](frameworks/opencode.md)
 - [OpenClaw](frameworks/openclaw.md)
